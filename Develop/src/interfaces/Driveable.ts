@@ -1,16 +1,37 @@
-// definition of the Driveable interface
-interface Driveable {
-  // declare the properties
-  started: boolean;
-  currentSpeed: number;
-  // declare the methods
-  start(): void;
-  accelerate(change: number): void;
-  decelerate(change: number): void;
-  stop(): void;
-  turn(direction: string): void;
-  reverse(): void;
+import Driveable from "./Driveable";
+
+class Car implements Driveable {
+    started: boolean = false;
+    currentSpeed: number = 0;
+
+    start(): void {
+        this.started = true;
+        console.log("Car started.");
+    }
+
+    accelerate(change: number): void {
+        this.currentSpeed += change;
+        console.log(`Car accelerated to ${this.currentSpeed} mph.`);
+    }
+
+    decelerate(change: number): void {
+        this.currentSpeed -= change;
+        if (this.currentSpeed < 0) this.currentSpeed = 0;
+        console.log(`Car decelerated to ${this.currentSpeed} mph.`);
+    }
+
+    stop(): void {
+        this.currentSpeed = 0;
+        console.log("Car stopped.");
+    }
+
+    turn(direction: string): void {
+        console.log(`Car turned ${direction}.`);
+    }
+
+    reverse(): void {
+        console.log("Car is reversing.");
+    }
 }
 
-// export the Driveable interface
-export default Driveable;
+import Driveable from "../interfaces/Driveable";

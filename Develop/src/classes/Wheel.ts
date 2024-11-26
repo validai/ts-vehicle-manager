@@ -22,4 +22,11 @@ class Wheel {
 }
 
 // Export the Wheel class
-export default Wheel;
+export default class Wheel {
+  size: number;
+
+  constructor(size: number) {
+    this.size = size;
+  }
+}
+
