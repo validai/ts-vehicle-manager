@@ -10,7 +10,7 @@ export interface AbleToTow {
 
   /**
    * Method to tow another vehicle.
-   * @param vehicle - The vehicle to be towed (can be Truck, Motorbike, or Car).
+   * @param vehicle - The vehicle to be towed. It must be a subclass of Vehicle (e.g., Truck, Motorbike, or Car).
    */
   tow(vehicle: Vehicle): void;
 }
