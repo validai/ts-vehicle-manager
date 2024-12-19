@@ -1,37 +1,38 @@
-import Driveable from "./Driveable";
+import Vehicle from "../classes/Vehicle";
 
-class Car implements Driveable {
-    started: boolean = false;
-    currentSpeed: number = 0;
-
-    start(): void {
-        this.started = true;
-        console.log("Car started.");
-    }
-
-    accelerate(change: number): void {
-        this.currentSpeed += change;
-        console.log(`Car accelerated to ${this.currentSpeed} mph.`);
-    }
-
-    decelerate(change: number): void {
-        this.currentSpeed -= change;
-        if (this.currentSpeed < 0) this.currentSpeed = 0;
-        console.log(`Car decelerated to ${this.currentSpeed} mph.`);
-    }
-
-    stop(): void {
-        this.currentSpeed = 0;
-        console.log("Car stopped.");
-    }
-
-    turn(direction: string): void {
-        console.log(`Car turned ${direction}.`);
-    }
-
-    reverse(): void {
-        console.log("Car is reversing.");
-    }
+export interface Driveable {
+  start(): void;
+  stop(): void;
+  accelerate(change: number): void;
+  decelerate(change: number): void;
+  turn(direction: string): void;
+  reverse(): void;
 }
 
-import Driveable from "../interfaces/Driveable";
+class Car extends Vehicle implements Driveable {
+  override start(): void {
+    console.log("Car started.");
+  }
+
+  override stop(): void {
+    console.log("Car stopped.");
+  }
+
+  override accelerate(change: number): void {
+    console.log(`Car accelerated by ${change} mph.`);
+  }
+
+  override decelerate(change: number): void {
+    console.log(`Car decelerated by ${change} mph.`);
+  }
+
+  turn(direction: string): void {
+    console.log(`Car turned ${direction}.`);
+  }
+
+  reverse(): void {
+    console.log("Car is reversing.");
+  }
+}
+
+export default Car;

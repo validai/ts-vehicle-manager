@@ -5,6 +5,7 @@ import { AbleToTow } from '../interfaces/AbleToTow.js';
 class Truck extends Vehicle implements AbleToTow {
   towingCapacity: number;
 
+
   constructor(
     vin: string,
     color: string,
@@ -20,7 +21,9 @@ class Truck extends Vehicle implements AbleToTow {
 
     // Ensure there are 4 wheels, or create default ones
     if (wheels.length !== 4) {
-      this.wheels = [new Wheel(17), new Wheel(17), new Wheel(17), new Wheel(17)];
+      this.wheels = [new Wheel(17), new Wheel(18), new Wheel(19), new Wheel(20
+        
+      )];
     } else {
       this.wheels = wheels;
     }
@@ -36,13 +39,13 @@ class Truck extends Vehicle implements AbleToTow {
     }
   }
 
-  printDetails(): void {
+  override printDetails(): void {
     super.printDetails();
     console.log(
       `Towing Capacity: ${this.towingCapacity} kg, Wheels: ${this.wheels.length}`
     );
     this.wheels.forEach((wheel, index) => {
-      console.log(`Wheel ${index + 1}: ${wheel.size} inches`);
+      console.log(`Wheel ${index + 1}: ${wheel.getDiameter} inches`);
     });
   }
 }

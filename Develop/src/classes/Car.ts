@@ -3,15 +3,15 @@ import Wheel from './Wheel.js';
 
 // Car class that extends Vehicle class
 class Car extends Vehicle {
-  // Declare properties of the Car class
-  vin: string;
-  color: string;
-  make: string;
-  model: string;
-  year: number;
-  weight: number;
-  topSpeed: number;
-  wheels: Wheel[];
+  // Override properties from the base class Vehicle
+  override vin!: string;
+  override color!: string;
+  override make!: string;
+  override model!: string;
+  override year!: number;
+  override weight!: number;
+  override topSpeed!: number;
+  override wheels!: Wheel[];
 
   // Constructor for the Car class
   constructor(
@@ -24,9 +24,10 @@ class Car extends Vehicle {
     topSpeed: number,
     wheels: Wheel[]
   ) {
-    // Call the constructor of the parent class, Vehicle
-    super(vin);
+    super(vin, color, make, model, year, weight, topSpeed, wheels); // Call parent constructor
 
+    // Initialize properties of the Car class
+    this.vin = vin;
     this.color = color;
     this.make = make;
     this.model = model;
@@ -34,14 +35,13 @@ class Car extends Vehicle {
     this.weight = weight;
     this.topSpeed = topSpeed;
 
-    // Check if the wheels array has 4 elements
-    // If not, create 4 new Wheel objects with default sizes
+    // Ensure the wheels array has exactly 4 elements
     if (wheels.length !== 4) {
       this.wheels = [
         new Wheel(17, 'Michelin'),
-        new Wheel(17, 'Michelin'),
-        new Wheel(17, 'Michelin'),
-        new Wheel(17, 'Michelin'),
+        new Wheel(18, 'Michelin'),
+        new Wheel(19, 'Michelin'),
+        new Wheel(20, 'Michelin'),
       ];
     } else {
       this.wheels = wheels;
@@ -50,10 +50,7 @@ class Car extends Vehicle {
 
   // Override the printDetails method from the Vehicle class
   override printDetails(): void {
-    // Call the printDetails method of the parent class, Vehicle
-    super.printDetails();
-
-    // Print details of the Car class
+    super.printDetails(); // Call parent method
     console.log(`VIN: ${this.vin}`);
     console.log(`Color: ${this.color}`);
     console.log(`Make: ${this.make}`);

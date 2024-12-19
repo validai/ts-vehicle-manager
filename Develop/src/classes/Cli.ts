@@ -39,7 +39,7 @@ class Cli {
         },
       ])
       .then((answers) => {
-        this.selectedVehicleVin = answers.selectedVehicleVin;
+        this.selectedVehicleVin = answers.selectedVehicleVin; inquirer || Cli
         this.performActions(); // Perform actions on the selected vehicle
       });
   }

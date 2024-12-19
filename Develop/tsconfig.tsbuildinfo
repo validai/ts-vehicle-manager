@@ -1,0 +1,1 @@
+{"root":["./src/classes/car.ts","./src/classes/cli.ts","./src/classes/motorbike.ts","./src/classes/truck.ts","./src/classes/vehicle.ts","./src/classes/wheel.ts","./src/classes/index.ts","./src/interfaces/abletotow.ts","./src/interfaces/driveable.ts"],"errors":true,"version":"5.7.2"}

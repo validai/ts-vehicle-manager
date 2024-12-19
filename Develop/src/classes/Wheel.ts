@@ -1,32 +1,24 @@
 // Wheel class that defines the properties of a wheel
 class Wheel {
-  // Declare properties of the Wheel class using private access modifier
-  private diameter: number;
-  private tireBrand: string;
+  private diameter: number; // Private property for diameter
+  private tireBrand: string; // Private property for tire brand
 
-  // Constructor for the Wheel class
+  // Constructor with default values
   constructor(diameter: number = 18, tireBrand: string = "GoodYear") {
     this.diameter = diameter;
     this.tireBrand = tireBrand;
   }
 
-  // Getter methods for the properties of the Wheel class
-  get getDiameter(): number {
+  // Getter for diameter
+  getDiameter(): number {
     return this.diameter;
   }
 
-  // Setter method for the diameter property
-  get getTireBrand(): string {
+  // Getter for tire brand
+  getTireBrand(): string {
     return this.tireBrand;
   }
 }
 
 // Export the Wheel class
-export default class Wheel {
-  size: number;
-
-  constructor(size: number) {
-    this.size = size;
-  }
-}
-
+export default Wheel;
