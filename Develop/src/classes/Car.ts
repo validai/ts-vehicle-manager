@@ -22,7 +22,8 @@ class Car extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
+    wheels: Wheel[] = [],
+  
   ) {
     super(vin, color, make, model, year, weight, topSpeed, wheels); // Call parent constructor
 

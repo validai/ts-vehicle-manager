@@ -3,32 +3,29 @@ import Wheel from './Wheel.js';
 import { AbleToTow } from '../interfaces/AbleToTow.js';
 
 class Truck extends Vehicle implements AbleToTow {
-  towingCapacity: number;
-
+   towingCapacity: number
 
   constructor(
-    vin: string,
-    color: string,
-    make: string,
-    model: string,
-    year: number,
-    weight: number,
-    topSpeed: number,
-    wheels: Wheel[],
-    towingCapacity: number
+{ vin, color, make, model, year, weight, topSpeed, wheels = [], towingCapacity }: { vin: string; color: string; make: string; model: string; year: number; weight: number; topSpeed: number; wheels: Wheel[]; towingCapacity: number; },
+   
   ) {
     super(vin, color, make, model, year, weight, topSpeed, wheels);
+    this.vin = vin;
+    this.color = color;
+    this.make = make;
+    this.model = model;
+    this.year = year;
+    this.weight = weight;
+    this.topSpeed = topSpeed;
+    this.towingCapacity = towingCapacity;
 
     // Ensure there are 4 wheels, or create default ones
     if (wheels.length !== 4) {
-      this.wheels = [new Wheel(17), new Wheel(18), new Wheel(19), new Wheel(20
-        
-      )];
+      this.wheels = [new Wheel(), new Wheel(), new Wheel(), new Wheel()
+    ];
     } else {
       this.wheels = wheels;
     }
-
-    this.towingCapacity = towingCapacity;
   }
 
   tow(vehicle: Vehicle): void {

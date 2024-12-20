@@ -12,8 +12,14 @@ class Motorbike extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[]
-  ) {
+    wheels: Wheel[] = [
+      new Wheel(17, "Michelin"),
+      new Wheel(18, "Michelin"),
+      new Wheel(19, "Michelin"),
+      new Wheel(20, "Michelin"),
+    ]
+  ) 
+  {
     super(vin, color, make, model, year, weight, topSpeed, wheels);
 
     // Ensure 2 wheels
