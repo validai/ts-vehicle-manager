@@ -2,7 +2,6 @@ import Truck from "./classes/Truck";
 import Car from "./classes/Car";
 import Motorbike from "./classes/Motorbike";
 import Wheel from "./classes/Wheel";
-
 import Cli from "./classes/Cli.js";
 
 // Create an array of vehicles
@@ -45,7 +44,7 @@ vehicles.push(car1);
 vehicles.push(motorbike1);
 
 // Create a new instance of the Cli class
-const cli = new Cli();
+const cli = new Cli(vehicles);
 
 // Start the CLI
 cli.startCli();

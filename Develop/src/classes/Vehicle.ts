@@ -25,6 +25,7 @@ class Vehicle  {
     topSpeed: number,
     wheels: Wheel[]
   ) {
+
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -75,7 +76,27 @@ class Vehicle  {
       console.log("Start the vehicle first!");
     }
   }
-}
+    turn(direction: "left" | "right"): void {
+      if (this.started) {
+          console.log(`Vehicle turned ${direction}.`);
+      } else {
+          console.log("Start the vehicle first!");
+      }
+  }
+
+  reverse(): void {
+      if (this.started) {
+          if (this.currentSpeed === 0) {
+              console.log("Vehicle is reversing.");
+          } else {
+              console.log("Stop the vehicle before reversing!");
+          }
+      } else {
+          console.log("Start the vehicle first!");
+      }
+  }
+  }
+
 
 // Export Vehicle class
 export default Vehicle;
