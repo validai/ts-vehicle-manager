@@ -1,4 +1,4 @@
-import Vehicle from "../classes/Vehicle";
+import Vehicle from "../classes/Vehicle.js";
 
 export interface Driveable {
   start(): void;

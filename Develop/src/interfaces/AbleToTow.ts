@@ -1,5 +1,5 @@
 // Import the base Vehicle class, which will be used in the interface
-import Vehicle from '../classes/Vehicle';
+import Vehicle from '../classes/Vehicle.js';
 
 // Define the AbleToTow interface
 export interface AbleToTow {
