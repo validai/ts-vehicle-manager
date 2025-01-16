@@ -1,9 +1,9 @@
-import Vehicle from './Vehicle.js';
-import Wheel from './Wheel.js';
+import Vehicle from './Vehicle';
+import Wheel from './Wheel';
 
-// Car class that extends Vehicle class
+// Car class that extends Vehicle
 class Car extends Vehicle {
-  // Override properties from the base class Vehicle
+  // Properties specific to the Car class
   override vin!: string;
   override color!: string;
   override make!: string;
@@ -22,12 +22,11 @@ class Car extends Vehicle {
     year: number,
     weight: number,
     topSpeed: number,
-    wheels: Wheel[] = [],
-  
+    wheels: Wheel[] = []
   ) {
-    super(vin, color, make, model, year, weight, topSpeed, wheels); // Call parent constructor
+    super(vin, color, make, model, year, weight, topSpeed, wheels);
 
-    // Initialize properties of the Car class
+    // Assign properties
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -36,20 +35,19 @@ class Car extends Vehicle {
     this.weight = weight;
     this.topSpeed = topSpeed;
 
-    // Ensure the wheels array has exactly 4 elements
-    if (wheels.length !== 4) {
-      this.wheels = [
-        new Wheel(17, 'Michelin'),
-        new Wheel(18, 'Michelin'),
-        new Wheel(19, 'Michelin'),
-        new Wheel(20, 'Michelin'),
-      ];
-    } else {
-      this.wheels = wheels;
-    }
+    // Ensure the car has exactly 4 wheels
+    this.wheels =
+      wheels.length === 4
+        ? wheels
+        : [
+            new Wheel(17, 'Michelin'),
+            new Wheel(17, 'Michelin'),
+            new Wheel(17, 'Michelin'),
+            new Wheel(17, 'Michelin'),
+          ];
   }
 
-  // Override the printDetails method from the Vehicle class
+  // Override the printDetails method from Vehicle
   override printDetails(): void {
     super.printDetails(); // Call parent method
     console.log(`VIN: ${this.vin}`);
@@ -59,8 +57,8 @@ class Car extends Vehicle {
     console.log(`Year: ${this.year}`);
     console.log(`Weight: ${this.weight} lbs`);
     console.log(`Top Speed: ${this.topSpeed} mph`);
-
-    // Print details of the wheels
+    
+    // Print details of each wheel
     this.wheels.forEach((wheel, index) => {
       console.log(
         `Wheel ${index + 1}: ${wheel.getDiameter()} inch with a ${wheel.getTireBrand()} tire`
@@ -69,5 +67,5 @@ class Car extends Vehicle {
   }
 }
 
-// Export the Car class as the default export
+// Export the Car class
 export default Car;
