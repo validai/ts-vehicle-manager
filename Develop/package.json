@@ -1,8 +1,8 @@
 {
-  "name": "develop",
+  "name": "vehicle-management",
   "version": "1.0.0",
   "description": "Vehicle management application",
-  "main": "dist/index.mjs", 
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "npx tsc",
@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
-    "@types/node": "^20.17.8"
+    "@types/node": "^20.17.8",
+    "ts-node": "^10.9.2"
   }
 }

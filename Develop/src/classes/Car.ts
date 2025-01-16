@@ -1,18 +1,8 @@
-import Vehicle from './Vehicle';
-import Wheel from './Wheel';
+import Vehicle from './Vehicle.js';
+import Wheel from './Wheel.js';
 
 // Car class that extends Vehicle
 class Car extends Vehicle {
-  // Properties specific to the Car class
-  override vin!: string;
-  override color!: string;
-  override make!: string;
-  override model!: string;
-  override year!: number;
-  override weight!: number;
-  override topSpeed!: number;
-  override wheels!: Wheel[];
-
   // Constructor for the Car class
   constructor(
     vin: string,
@@ -25,15 +15,6 @@ class Car extends Vehicle {
     wheels: Wheel[] = []
   ) {
     super(vin, color, make, model, year, weight, topSpeed, wheels);
-
-    // Assign properties
-    this.vin = vin;
-    this.color = color;
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.weight = weight;
-    this.topSpeed = topSpeed;
 
     // Ensure the car has exactly 4 wheels
     this.wheels =
