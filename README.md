@@ -56,7 +56,7 @@ Follow these steps to set up the project locally:
 
 ## Walkthrough Video
 - Click the link below to view a walkthrough of the application:
-
+- https://www.loom.com/share/437796f4d3e843019e37e2695e10b471?sid=17a49548-2558-434e-bbcc-3199d55413ba
 
 
 ## License  

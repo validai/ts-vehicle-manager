@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
+    "strict": true,
     "esModuleInterop": true,
-    "strict": true
+    "resolveJsonModule": true
   },
   "include": ["src/**/*.ts"]
 }
+
